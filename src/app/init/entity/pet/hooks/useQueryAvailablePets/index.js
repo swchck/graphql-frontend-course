@@ -5,5 +5,7 @@ import {useQuery} from "@apollo/client";
 const queryAvailablePets = loader('./gql/queryAvailablePets.graphql');
 
 export const useQueryAvailablePets = () => {
-    return useQuery(queryAvailablePets);
+    return useQuery(queryAvailablePets, {
+        pollInterval: 500
+    });
 }
